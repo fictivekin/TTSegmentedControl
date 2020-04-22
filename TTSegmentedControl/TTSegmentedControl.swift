@@ -72,7 +72,7 @@ open class TTSegmentedControl: UIView {
     fileprivate var lastSelectedViewWidth: CGFloat = 0
     
     
-    fileprivate let thumbPadding: CGFloat = 2
+    fileprivate let thumbPadding: CGFloat = 0
     
     fileprivate let shadowLayer = CAShapeLayer()
     fileprivate var gradientLayer = CAGradientLayer()
@@ -324,9 +324,9 @@ extension TTSegmentedControl {
         thumbContainerView.frame.origin.y = 0
         thumbContainerView.frame.size.height = containerView.frame.size.height
         
-        thumbView.frame.size.height = containerView.frame.size.height - 4
+        thumbView.frame.size.height = containerView.frame.size.height - 2 * thumbPadding
         thumbView.layer.cornerRadius = cornerRadius < 0 ? 0.5 * thumbView.frame.size.height : cornerRadius
-        thumbView.frame.origin.y = 2
+        thumbView.frame.origin.y = thumbPadding
         
         
         shadowLayer.frame = thumbView.bounds
